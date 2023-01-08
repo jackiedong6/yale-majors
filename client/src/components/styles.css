@@ -1,0 +1,61 @@
+.navbar_items {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 0 30px;
+    background-color: #00356b;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+    width: 95%;
+    height: 120px;
+    border-radius: 30px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+    font-family: "Computer Modern Sans", sans-serif;
+}
+
+.icon {
+    height: 50%;
+    margin-bottom: 15px;
+    margin-right: -15px;
+}
+
+
+.container.login {
+    margin-left: 5%;
+    margin-right: auto;
+    width: 55%;
+    display: flex;
+    padding-top: 200px;
+    color: #00356b;
+    font-weight: bold;
+    font-size: calc(5vmin);
+}
+
+.container.home{
+    padding-top:150px;
+    display:flex;
+}
+
+
+.MuiInputBase-root{
+    background-color:white;
+    border-radius: 10px !important;
+    color:white;
+}
+
+.MuiFormLabel-root.Mui-focused{
+    color: #00356b !important;
+}
+
+.MuiButtonBase-root{
+    margin-left:auto !important;
+}
+
+.searchbar{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}

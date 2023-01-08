@@ -2,3 +2,4 @@
 degree_audit.iml
 node_modules/
 .DS_Store
+.env

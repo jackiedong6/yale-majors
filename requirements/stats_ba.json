@@ -1,0 +1,252 @@
+{
+  "name": "Statistics and Data Science (B.A.)",
+  "code": "S&DS",
+  "prerequisites": [
+    {
+      "category": "Multivariable Calculus",
+      "courses": [
+        "MATH 120",
+        "ENAS 151",
+        "MATH 230",
+        "MATH 302"
+      ],
+      "required": 1
+    }
+  ],
+  "requirements": [
+    {
+      "category": "Linear Algebra",
+      "courses": [
+        "MATH 222",
+        "MATH 225",
+        "MATH 226"
+      ],
+      "required": 1
+    },
+    {
+      "category": "Core Probability and Statistics",
+      "courses": [
+        "S&DS 238",
+        "S&DS 241",
+        "S&DS 242",
+        "S&DS 312",
+        "S&DS 351"
+      ],
+      "required": 2
+    },
+    {
+      "category": "Computational Skills",
+      "courses": [
+        {
+          "course_list": [
+            "S&DS 220",
+            "S&DS 230"
+          ],
+          "required": 1
+        },
+        {
+          "course_list": [
+            "CPSC 100",
+            "CPSC 112",
+            "CPSC 200",
+            "CPSC 201",
+            "ENAS 130"
+          ],
+          "required": 1
+        },
+        {
+          "course_list": [
+            "S&DS 425"
+          ],
+          "required": 1
+        },
+        {
+          "course_list": [
+            "S&DS 262"
+          ],
+          "required": 1
+        },
+        {
+          "course_list": [
+            "S&DS 265"
+          ],
+          "required": 1
+        }
+      ],
+      "required": 2
+    },
+    {
+      "category": "Methods of Data Science",
+      "courses": [
+        "S&DS 312",
+        "S&DS 317",
+        "S&DS 361",
+        "S&DS 363",
+        "S&DS 365",
+        "S&DS 430",
+        "S&DS 431",
+        "S&DS 468",
+        "EENG 400",
+        "CPSC 446",
+        "CPSC 452",
+        "CPSC 477"
+      ],
+      "required": 2
+    },
+    {
+      "category": "Mathematical Foundations and Theory",
+      "courses": [
+        "CPSC 365",
+        "CPSC 469",
+        "MATH 222",
+        "MATH 225",
+        "MATH 226",
+        "MATH 240",
+        "MATH 244",
+        "MATH 255",
+        "MATH 256",
+        "MATH 302",
+        "MATH 305",
+        "MATH 320",
+        "MATH 325",
+        "S&DS 364",
+        "S&DS 400",
+        "S&DS 410",
+        "S&DS 411",
+        "S&DS 669"
+      ],
+      "required": 0
+    },
+    {
+      "category": "Efficient Computation and Big Data",
+      "courses": [
+        "CPSC 223",
+        "CPSC 323",
+        "CPSC 437",
+        "CPSC 424"
+      ],
+      "required": 0
+    },
+    {
+      "category": "Data Science in Context",
+      "courses": [
+        "PSYC 235",
+        "PSYC 258",
+        "PLSC 454",
+        "ANTH 376",
+        "EVST 362",
+        "GLBL 191",
+        "GLBL 195",
+        "LING 229",
+        "LING 234",
+        "LING 380",
+        "S&DS 315"
+      ],
+      "required": 0
+    },
+    {
+      "category": "Methods in Application Areas",
+      "courses": [
+        "S&DS 352",
+        "EENG 445",
+        "ENAS 962",
+        "ECON 136",
+        "ECON 419",
+        "ECON 420",
+        "CPSC 453",
+        "CPSC 470",
+        "CPSC 475",
+        "LING 227"
+      ],
+      "required": 0
+    }
+  ],
+  "electives": [
+    {
+      "category": "electives",
+      "courses": [
+        "S&DS 238",
+        "S&DS 241",
+        "S&DS 242",
+        "S&DS 312",
+        "S&DS 351",
+        "S&DS 312",
+        "S&DS 314",
+        "S&DS 317",
+        "S&DS 361",
+        "S&DS 363",
+        "S&DS 365",
+        "CPSC 446",
+        "CPSC 452",
+        "CPSC 477",
+        "S&DS 430",
+        "S&DS 431",
+        "S&DS 468",
+        "EENG 400",
+        "CPSC 365",
+        "CPSC 366",
+        "CPSC 469",
+        "MATH 244",
+        "MATH 255",
+        "MATH 256",
+        "MATH 302",
+        "MATH 305",
+        "MATH 320",
+        "MATH 325",
+        "S&DS 364",
+        "S&DS 400",
+        "S&DS 410",
+        "S&DS 411",
+        "S&DS 669",
+        "CPSC 223",
+        "CPSC 323",
+        "CPSC 437",
+        "CPSC 424",
+        "PSYC 235",
+        "PYSC 258",
+        "PLSC 454",
+        "ANTH 376",
+        "EVST 362",
+        "GLBL 191",
+        "GLBL 195",
+        "LING 229",
+        "LING 234",
+        "LING 380",
+        "S&DS 315",
+        "S&DS 352",
+        "EENG 445",
+        "ENAS 962",
+        "ECON 136",
+        "ECON 419",
+        "ECON 420",
+        "CPSC 453",
+        "CPSC 470",
+        "CPSC 475",
+        "LING 227"
+      ],
+      "required": 3
+    }
+  ],
+  "senior": [
+    {
+      "courses": [
+        {
+          "category": "Senior Project",
+          "course_list": [
+            "S&DS 491",
+            "S&DS 492"
+          ],
+          "required": 1
+        },
+        {
+          "category": "Statistics Case Studies",
+          "course_list": [
+            "S&DS 425"
+          ],
+          "required": 1
+        }
+      ],
+      "required": 1
+    }
+  ]
+}
