@@ -1,14 +1,17 @@
+/***********Navbar Styling*************/
+
 .navbar_items {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
     padding: 0 30px;
+    margin-bottom: -100px;
     background-color: #00356b;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
     width: 95%;
     height: 120px;
     border-radius: 30px;
-    position: fixed;
+    position: relative;
     top: 20px;
     left: 50%;
     transform: translate(-50%);
@@ -23,6 +26,8 @@
 }
 
 
+/***********Login Styling*************/
+
 .container.login {
     margin-left: 5%;
     margin-right: auto;
@@ -34,28 +39,153 @@
     font-size: calc(5vmin);
 }
 
-.container.home{
-    padding-top:150px;
-    display:flex;
-}
+
+/***********Searchbar Styling*************/
 
 
-.MuiInputBase-root{
-    background-color:white;
+.MuiInputBase-root {
+    background-color: white;
     border-radius: 10px !important;
-    color:white;
+    color: white;
 }
 
-.MuiFormLabel-root.Mui-focused{
+.MuiFormLabel-root.Mui-focused {
     color: #00356b !important;
 }
 
-.MuiButtonBase-root{
-    margin-left:auto !important;
+.MuiButtonBase-root {
+    margin-left: auto !important;
 }
 
-.searchbar{
+.searchbar {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 2.5%;
+}
+
+
+/***********Home Styling*************/
+
+.container.home {
+    padding-top: 150px;
+    width: 100%;
+}
+
+
+.grid {
+    margin-top: 2%;
+    color: white;
+    text-align: center;
+}
+
+
+/*flex item*/
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 150ms ease-in-out;
+    border-radius: 30px;
+    min-width: 275px;
     width: 95%;
+    margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
 }
+
+/*left column*/
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 275px;
+    flex: 18%;
+    font-size: calc(20px + 2vmin);
+    background-color: #00356b;
+    border-radius: 30px;
+    color: white;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: calc(1vh);
+    align-self: stretch;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+}
+
+
+/*right column*/
+.degree_type {
+    flex: 80%;
+    color: #00356b;
+    width: 100%;
+    min-height: 80px;
+    margin-bottom: calc(1vh);
+    font-size: calc(20px + 2vmin);
+    border: 2px solid #00356b;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+/*right column*/
+.courses {
+
+    flex: 80%;
+    color: #00356b;
+    width: 100%;
+    margin-bottom: calc(1vh);
+    border: 2px solid #00356b;
+    min-height: 75px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+
+}
+
+.subheading{
+    color: #00356b;
+    text-align: left;
+    padding: 2.5%;
+}
+.test{
+    margin-bottom: -2.5%;
+}
+
+.course.layout{
+    width: 100%;
+    margin: -2% 2.5% 5% 2.5%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.course.card{
+    margin-right: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    min-height: 50px;
+    max-width: 20%;
+    min-width: 20%;
+    flex: 25%;
+    border-radius: 15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+
+
+
+.options{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: -1%;
+}
+
+.options.subheading{
+    margin-left:-1.5%;
+}
+
+
