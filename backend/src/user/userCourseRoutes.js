@@ -9,6 +9,8 @@ const router = express.Router();
 router.post("/user/courses", async function (req, res, next) {
     try {
         const courseCode = req.body.text;
+        console.log("adding course", courseCode)
+
         const data = await userCourseHandler.addCourse(courseCode, req.user);
         res.json({ courseList: data.courseList });
     } catch (e) {
@@ -22,8 +24,8 @@ router.post("/user/courses", async function (req, res, next) {
 router.delete("/user/courses", async function (req, res, next) {
     try {
         const courseCode = req.body.text;
-        console.log(courseCode);
         const netId = req.user;
+        console.log("deleting course", courseCode)
         await userCourseHandler.deleteCourse(netId, courseCode);
         res.json({ status: "success" });
     } catch (e) {

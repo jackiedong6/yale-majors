@@ -125,9 +125,9 @@
     border: 2px solid #00356b;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
-    display:flex;
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 /*right column*/
@@ -144,48 +144,60 @@
 
 }
 
-.subheading{
-    color: #00356b;
-    text-align: left;
-    padding: 2.5%;
-}
-.test{
+
+.wrapper {
     margin-bottom: -2.5%;
 }
 
-.course.layout{
+.course.layout {
     width: 100%;
     margin: -2% 2.5% 5% 2.5%;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
 }
 
-.course.card{
+.course.card {
     margin-right: 1%;
     margin-left: 1%;
     margin-bottom: 1%;
     min-height: 50px;
-    max-width: 20%;
+    max-width: 30%;
     min-width: 20%;
-    flex: 25%;
+    flex: 25% 1;
     border-radius: 15px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
 }
 
+.course.card.completed {
+    background-color: #63aaff;
+}
 
-
-.options{
+.options {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     margin-top: -1%;
 }
 
-.options.subheading{
-    margin-left:-1.5%;
+.options.subheading {
+    margin-left: -1.5%;
 }
 
 
+.required{
+    color: #00356b;
+    padding:2.5%;
+    text-align:left;
+    margin-top: -5%;
+}
+
+.subheading {
+    color: #00356b;
+    text-align: left;
+    padding: 2.5%;
+}
+.heading{
+}

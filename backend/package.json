@@ -1,11 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "cd src && nodemon src/index.js"
+    "start": "cd src && node index.js"
   },
   "author": "",
   "license": "ISC",
