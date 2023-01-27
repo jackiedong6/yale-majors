@@ -10,6 +10,8 @@ const router = express.Router();
  * If authenticated then return the authentication as true, their netId, course list, and major
  */
 router.get("/auth/check", (req, res) => {
+    console.log(req.user)
+    console.log(req.cookies)
     if (req.user) {
         User.findOne({netId: req.user}, function (err, docs) {
             if (err) {
@@ -42,7 +44,7 @@ router.get(
             if (err) {
                 return next(err);
             }
-            return res.redirect("http://localhost:3000");
+            return res.redirect("https://localhost:3000");
         });
     }
 );

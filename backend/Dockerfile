@@ -1,5 +1,7 @@
 # Base image used
-FROM node:alpine
+FROM --platform=linux/amd64 node:lts-alpine
+
+
 # Installing project dependencies
 
 WORKDIR /app
@@ -10,6 +12,9 @@ RUN npm install
 COPY . .
 
 ENV PORT=5000
+ENV ECS_AVAILABLE_LOGGING_DRIVERS='["json-file","awslogs"]'
+
+ENV app_environment=FARGATE
 
 EXPOSE 5000
 # Running default command

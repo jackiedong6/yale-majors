@@ -3,7 +3,7 @@ import {useContext} from "react";
 import Home from "./home"
 
 const Landing = () => {
-    const {isAuthenticated} = useContext(UserContext);
+    const {isAuthenticated, checkContext} = useContext(UserContext);
 
     // The user is logged in
     if (isAuthenticated) {

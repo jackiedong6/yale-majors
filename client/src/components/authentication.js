@@ -7,11 +7,20 @@ import "./styles.css"
 
 
 const Authentication = () => {
+
+    // const auth_backend = "https://localhost:5000/api/auth/cas"
+
+    // const auth_backend = "http://54.221.107.250:5000/api/auth/cas"
+
+    // const auth_backend = "https://yalemajors-load-balancer-1483251936.us-east-1.elb.amazonaws.com/api/auth/cas"
+
+    const auth_backend ="https://yalemajorsapi.com/api/auth/cas"
     const cas = () => {
-        window.open("http://localhost:5000/api/auth/cas", "_self");
+        window.open(auth_backend, "_self");
     };
 
     const {isAuthenticated, checkContext} = useContext(UserContext);
+
     const navigate = useNavigate();
     if (isAuthenticated) {
         return (

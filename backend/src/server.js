@@ -7,12 +7,12 @@ import { passportConfig } from "./auth/authHandlers.js";
 import auth_routes from "./auth/authRoutes.js";
 import user_course_routes from "./user/userCourseRoutes.js";
 import major_requirement_routes from "./major_requirements/majorRequirementsRoutes.js";
+import cookieParser from "cookie-parser";
 
-// Configurating the Cross-Origin Reserouce Sharing
 
 const corsOptions = {
     credentials: true,
-    origin: "http://localhost:3000",
+    origin: "https://localhost:3000",
     optionsSuccessStatus: 200,
 };
 
@@ -30,10 +30,11 @@ app.use(
         resave: false,
         saveUninitialized: false,
         cookie: {
-            path: "/",
             httpOnly: true,
-            secure: false,
+            secure: true,
             maxAge: 10 * 60 * 100000,
+            sameSite: 'None'
+
         },
     })
 );
@@ -45,23 +46,16 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(cookieParser());
+
 passportConfig(passport);
 
 app.use("/api", auth_routes);
 app.use("/api", major_requirement_routes);
 app.use("/api", user_course_routes);
 
-import path from "path";
-
-import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-// Step 1:
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-// Step 2:
-app.get("*", function (request, response) {
-    response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
-///////////////////////////////////////////////////////End of Middleware//////////////////////////////////////////////////
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 
 export default app;
