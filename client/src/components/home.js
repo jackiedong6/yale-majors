@@ -3,11 +3,11 @@ import "./styles.css"
 import MajorDataService from "../services/majorRequirements.js";
 import {useState, useEffect, useContext} from "react";
 import {
-    Card, Typography, Checkbox, CardActions, CardHeader,
+    Card, Typography, CardActions, CardHeader,CardActionArea
 } from "@mui/material";
 import UserContext from "../contexts/userContext";
 import UserCourseService from "../services/userCourseList.js";
-
+import AddIcon from '@mui/icons-material/Add';
 
 const Home = () => {
 
@@ -28,7 +28,7 @@ const Home = () => {
     const [userCourses, setUserCourses] = useState(courseList)
 
 
-    const handleCheck = (courseName) => {
+    const handleClick = (courseName) =>{
         const temp = userCourses?.includes(courseName)
             ? userCourses?.filter((name) => name !== courseName)
             : [...(userCourses ?? []), courseName];
@@ -86,14 +86,16 @@ const Home = () => {
         }
     }
     const renderCard = (course, index) => {
-        return (<Card key={index}
+
+        return (
+            <Card key={index}
                       variant="outlined"
                       className={
                           userCourses.includes(course)
                               ? "course card completed"
                               : "course card"
-                      }>
-
+                      } onClick = {() => handleClick(course)}>
+                <CardActionArea>
             <CardHeader
                 sx={{display: "flex", flex: 1}}
                 title={<Typography
@@ -112,14 +114,11 @@ const Home = () => {
                 alignSelf: 'stretch', display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-start',
             }}
             >
-                <Checkbox checked={userCourses.includes(course)} onChange={() =>
-                    handleCheck(
-                        course,
-                    )
-                } size="small" color="primary">
-                </Checkbox>
+                <AddIcon sx = {{fontSize: "small", color: "#00356b"}}></AddIcon>
             </CardActions>
-        </Card>)
+        </CardActionArea>
+        </Card>
+            )
     }
 
 
@@ -156,6 +155,8 @@ const Home = () => {
                     {"required_text" in item &&
                         <h4 className="required">({item.required_text})</h4>
                     }
+                    {!("required_text" in item) &&
+                        <h4 className ="required">Required Courses: {item.required}</h4>}
                 </div>
                 <div className="course layout" key={index}>
                     {renderCourses(item.courses, index)}
