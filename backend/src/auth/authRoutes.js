@@ -38,13 +38,15 @@ router.get("/auth/check", (req, res) => {
  */
 router.get(
     "/auth/cas",
-    passport.authenticate("cas", {failureRedirect: "api/auth/login/failed"}),
+    passport.authenticate("cas", {failureRedirect: "login/failed"}),
     function (req, res) {
         req.logIn(req.user, function (err) {
             if (err) {
                 return next(err);
             }
-            return res.redirect("https://localhost:3000");
+            // return res.redirect("https://www.yalemajors.com");
+            return res.redirect("http://localhost:3000/");
+
         });
     }
 );

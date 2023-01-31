@@ -8,11 +8,14 @@ import auth_routes from "./auth/authRoutes.js";
 import user_course_routes from "./user/userCourseRoutes.js";
 import major_requirement_routes from "./major_requirements/majorRequirementsRoutes.js";
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
+
+dotenv.config("../.env");
 
 
 const corsOptions = {
     credentials: true,
-    origin: "https://localhost:3000",
+    origin: ["https://www.yalemajors.com", "https://yalemajors.com", "http://localhost:3000"],
     optionsSuccessStatus: 200,
 };
 
@@ -26,14 +29,14 @@ app.use(cors(corsOptions));
 
 app.use(
     session({
-        secret: "somethingsecretgoeshere",
+        secret: process.env.COOKIE_SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: {
-            httpOnly: true,
-            secure: true,
+            httpOnly: false,
+            secure: false,
             maxAge: 10 * 60 * 100000,
-            sameSite: 'None'
+            // sameSite: 'None'
 
         },
     })
