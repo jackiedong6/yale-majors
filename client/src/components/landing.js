@@ -48,7 +48,7 @@ const Landing = () => {
                     <br/>
                     <span className="feature_text">
                         <AiOutlineStock className="mr-2 my-auto" style={{color: "red", marginBottom: "-1%", marginRight: "2.5%"}}/>
-                      Integrating new features at a rapid rate
+                      Adding new features and supporting new majors on a demand basis
                     </span>
                     <br/>
                     <Button variant="outlined" onClick={cas}
