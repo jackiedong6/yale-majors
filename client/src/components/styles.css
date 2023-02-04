@@ -200,5 +200,9 @@
 .css-1wcvsu9-MuiButtonBase-root-MuiButton-root{
     text-transform: None !important;
     font-size: calc(3vmin + 7.5px) !important;
+}
 
+
+.MuiButtonBase-root{
+    text-transform: None !important;
 }
