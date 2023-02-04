@@ -15,7 +15,6 @@ const UserContextProvider = ({ children }) => {
             withCredentials: true
         })
             .then(({ data}) => {
-                console.log(data)
                 if (data.auth) {
                     setIsAuthenticated(true);
                     setUser(data.user);

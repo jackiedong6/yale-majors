@@ -13,7 +13,7 @@ const Home = () => {
 
     useEffect(() => {
         if (majorData.name !== "") {
-            console.log(majorData);
+            // console.log(majorData);
         }
     });
 
@@ -38,10 +38,10 @@ const Home = () => {
         );
 
         if (difference.length > 0) {
-            console.log("adding course")
+            // console.log("adding course")
             UserCourseService.add(courseName);
         } else {
-            console.log("deleting course")
+            // console.log("deleting course")
             UserCourseService.delete(courseName);
         }
         setUserCourses(temp);
@@ -171,7 +171,19 @@ const Home = () => {
 
         MajorDataService.find(major_name)
             .then((response) => {
-                setMajorData(response.data)
+                if(Object.keys(response.data).length > 0){
+                    setMajorData(response.data)
+                }
+                else{
+                    setMajorData(initialMajorState);
+                    return(
+                        <div className = "grid">
+                            <h1>{major_name} is not currently supported</h1>
+                        </div>
+                    )
+
+                }
+
             })
     }
 

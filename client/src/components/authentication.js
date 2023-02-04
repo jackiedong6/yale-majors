@@ -41,22 +41,23 @@ const Authentication = () => {
                 Logout
             </Button>
         );
-    } else {
-        return (
-            <Button variant="outlined" onClick={cas}
-                    sx={{
-                        fontFamily: "Computer Modern Sans, sans-serif",
-                        fontWeight: "bold",
-                        color: "white",
-                        borderColor: "transparent",
-                        fontSize: "1.5rem",
-                        marginLeft: "auto",
-                        "&:hover": {backgroundColor: "transparent", borderColor: "transparent"}
-                    }}>
-                Login
-            </Button>
-        )
     }
+    // else {
+    //     return (
+    //         <Button variant="outlined" onClick={cas}
+    //                 sx={{
+    //                     fontFamily: "Computer Modern Sans, sans-serif",
+    //                     fontWeight: "bold",
+    //                     color: "white",
+    //                     borderColor: "transparent",
+    //                     fontSize: "1.5rem",
+    //                     marginLeft: "auto",
+    //                     "&:hover": {backgroundColor: "transparent", borderColor: "transparent"}
+    //                 }}>
+    //             Login
+    //         </Button>
+    //     )
+    // }
 };
 
 export default Authentication;
