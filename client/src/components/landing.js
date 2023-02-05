@@ -21,7 +21,8 @@ const Landing = () => {
     const {isAuthenticated, checkContext} = useContext(UserContext);
 
     // const auth_backend = "http://localhost:5000/api/auth/cas"
-    const auth_backend ="https://yalemajorsapi.com/api/auth/cas"
+    // const auth_backend ="https://yalemajorsapi.com/api/auth/cas"
+    const auth_backend = "https://api.yalemajors.com/api/auth/cas"
 
     const cas = () => {
         window.open(auth_backend, "_self");
