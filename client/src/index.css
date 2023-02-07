@@ -45,11 +45,25 @@
   font-style: italic;
 }
 
+
+@font-face {
+  font-family: YaleFont;
+  src: url("assets/yale_font/YaleNew-Roman.otf") format("opentype");
+}
+
+@font-face {
+  font-family: YaleFont;
+  font-weight: bold;
+  src: url("assets/yale_font/YaleNew-Bold.otf") format("opentype");
+}
+
+
 *{
   margin: 0;
   padding:0;
   box-sizing:border-box;
-  font-family:"Computer Modern Sans", sans-serif;
+  /*font-family:"Computer Modern Sans", sans-serif;*/
+  font-family: "YaleFont", serif;
 }
 
 body {

@@ -103,7 +103,7 @@ const Home = () => {
                     sx={{
                         display: 'flex',
                         justifyContent: 'center',
-                        fontFamily: "Computer Modern Sans, sans-serif",
+                        fontFamily: "YaleFont",
                         color: "#00356b"
                     }}
                 >

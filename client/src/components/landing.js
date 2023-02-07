@@ -1,5 +1,6 @@
 import UserContext from "../contexts/userContext";
 import {useContext} from "react";
+import {useNavigate} from "react-router-dom";
 import Home from "./home"
 import "./landing.css"
 
@@ -18,10 +19,11 @@ import Button from "@mui/material/Button";
 
 
 const Landing = () => {
+
     const {isAuthenticated, checkContext} = useContext(UserContext);
+    const navigate = useNavigate();
 
     // const auth_backend = "http://localhost:5000/api/auth/cas"
-    // const auth_backend ="https://yalemajorsapi.com/api/auth/cas"
     const auth_backend = "https://api.yalemajors.com/api/auth/cas"
 
     const cas = () => {
@@ -55,7 +57,7 @@ const Landing = () => {
                     <Button variant="outlined" onClick={cas}
                             sx={{
                                 marginTop: "5%;",
-                                fontFamily: "Computer Modern Sans, sans-serif",
+                                fontFamily: "YaleFont",
                                 fontWeight: "bold",
                                 color: "white",
                                 borderColor: "transparent",
@@ -69,15 +71,14 @@ const Landing = () => {
                             }}>
                         Login with Cas
                     </Button>
-                    <Button variant="outlined" onClick={cas} disabled = {true}
+                    <Button variant="outlined"  onClick={() => navigate("/about")}
                             sx={{
                                 marginTop: "5%;",
                                 marginLeft:"5% !important",
-                                fontFamily: "Computer Modern Sans, sans-serif",
+                                fontFamily: "YaleFont",
                                 fontWeight: "bold",
                                 color: "black",
                                 borderColor: "transparent",
-                                fontSize: "font-size: calc(1vmin + 8px);",
                                 background: "#dddddd !important",
                                 borderRadius: "15px",
                                 transition: "0.3s",
@@ -86,11 +87,10 @@ const Landing = () => {
                             }}>
                         About Us
                     </Button>
-                    {/*    About Us*/}
                 </div>
                 <div className="logo">
                     <img
-                        src="landing.svg"
+                        src="landing.svg" alt = "landing"
                         style={{width: '100%'}}
                     />
                 </div>

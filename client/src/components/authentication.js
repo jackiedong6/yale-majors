@@ -8,13 +8,6 @@ import "./styles.css"
 
 const Authentication = () => {
 
-    // const auth_backend ="https://yalemajorsapi.com/api/auth/cas"
-    // const auth_backend = "http://localhost:5000/api/auth/cas"
-    const auth_backend = "https://api.yalemajors.com/api/auth/cas"
-    const cas = () => {
-        window.open(auth_backend, "_self");
-    };
-
     const {isAuthenticated, checkContext} = useContext(UserContext);
 
     const navigate = useNavigate();
@@ -31,7 +24,7 @@ const Authentication = () => {
                     })
                 }
                 sx={{
-                    fontFamily: "Computer Modern Sans, sans-serif",
+                    fontFamily: "YaleFont",
                     fontWeight: "bold",
                     color: "white",
                     borderColor: "transparent",
@@ -43,22 +36,6 @@ const Authentication = () => {
             </Button>
         );
     }
-    // else {
-    //     return (
-    //         <Button variant="outlined" onClick={cas}
-    //                 sx={{
-    //                     fontFamily: "Computer Modern Sans, sans-serif",
-    //                     fontWeight: "bold",
-    //                     color: "white",
-    //                     borderColor: "transparent",
-    //                     fontSize: "1.5rem",
-    //                     marginLeft: "auto",
-    //                     "&:hover": {backgroundColor: "transparent", borderColor: "transparent"}
-    //                 }}>
-    //             Login
-    //         </Button>
-    //     )
-    // }
 };
 
 export default Authentication;
