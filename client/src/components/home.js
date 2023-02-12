@@ -222,14 +222,17 @@ const Home = () => {
                                         curr_count += 1
                                     }
                                 } else {
-                                    item.courses.forEach((option) => {
-                                        if (userCourses.includes(option.course_code)) {
-                                            curr_count +=1
-                                        }
-                                    })
+                                        course.course_list.forEach((test) =>{
+                                            console.log(test)
+                                            if (userCourses.includes(test.course_code)) {
+                                                console.log(test.course_code)
+                                                curr_count +=1
+                                            }
+                                        })
                                 }
                             })
                             if(parseInt(flag) === 0){
+                                // console.log(item.category, curr_count, item.required)
                                 updateRequirementTable(item.category, curr_count, parseInt(item.required))
                             }
                         })
