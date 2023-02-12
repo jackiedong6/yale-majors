@@ -101,7 +101,9 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
 }
 
-
+.label.degree{
+    flex-direction: column;
+}
 /*right column*/
 .degree_type {
     flex: 80%;
@@ -144,6 +146,14 @@
 .course_title:hover {
     overflow:visible;
     text-overflow:initial !important;
+}
+
+.progress{
+    font-size: 1rem;
+}
+.test{
+
+    font-size: 1rem;
 }
 
 

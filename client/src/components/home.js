@@ -14,7 +14,6 @@ import AddIcon from '@mui/icons-material/Add';
 const Home = () => {
     useEffect(() => {
         if (majorData.name !== "") {
-            // console.log(majorData);
         }
     });
 
@@ -27,19 +26,28 @@ const Home = () => {
     const {courseList} = useContext(UserContext);
 
     const [userCourses, setUserCourses] = useState(courseList)
-    const [table, setTable] = useState({});
-    const [totalRequired, setTotalRequired] = useState(0)
-    const [totalSatisfied, setTotalSatisfied] = useState(0)
+
+    // Key as the requirement string, value as [completed, required]
+    const [requirementTable, setRequirementTable] = useState({});
 
 
-    const insert = (key, value = 1) => {
-        setTable(prevTable => ({
-            ...prevTable, [key]: key in prevTable ? prevTable[key] + value : value
-        }));
+    const updateRequirementTable = (key, completed, required) => {
+        setRequirementTable(prevTable => {
+            if (key in prevTable) {
+                return {
+                    ...prevTable,
+                    [key]: { completed: prevTable[key].completed + completed, required: prevTable[key].required + required}
+                };
+            }
+            return {
+                ...prevTable,
+                [key]: { completed, required}
+            };
+        });
     };
 
-    const retrieve = key => {
-        return key in table ? table[key] : 0;
+    const retrieveRequirementTable = key => {
+        return key in requirementTable ? requirementTable[key] : { completed: 0, required: 0 };
     };
 
 
@@ -48,17 +56,12 @@ const Home = () => {
 
         let difference = temp.filter((x) => !userCourses.includes(x));
         if (difference.length > 0) {
-            // console.log("adding course")
             UserCourseService.add(courseName);
-            insert(family)
-            // const prev = course_count.getItem(family)
-            // course_count.setItem(family, prev + 1)
+            updateRequirementTable(family, 1, 0)
+
         } else {
-            // console.log("deleting course")
             UserCourseService.delete(courseName);
-            insert(family, -1)
-            // const prev = course_count.getItem(family)
-            // course_count.setItem(family, prev - 1)
+            updateRequirementTable(family, -1, 0)
         }
         setUserCourses(temp);
     }
@@ -67,7 +70,8 @@ const Home = () => {
         if (majorData.name !== "") {
             return (<div className="grid">
                 <div className="category">
-                    <h1 className="label degree">Degree</h1>
+                    <h1 className="label degree">Degree{renderProgress()}
+                    </h1>
                     <div className="degree_type">
                         {majorData.degree}
                     </div>
@@ -165,7 +169,7 @@ const Home = () => {
 
     const renderRequirements = (requirements) => {
         return (requirements.map((item, index) => {
-            const completed = retrieve(item.category)
+            const completed = retrieveRequirementTable(item.category).completed
             return (<div className="wrapper" key={index}>
                 <div className="heading">
                     <h1 className="subheading">{item.category}</h1>
@@ -182,60 +186,59 @@ const Home = () => {
 
         }))
     }
+    const renderProgress = () => {
+        const keys = Object.keys(requirementTable)
+        let totalRequired = 0
+        let totalSatisfied = 0
+        keys.forEach(key => {
+            const value = requirementTable[key]
+            totalRequired += value.required
+            if (value.completed >= value.required){
+                totalSatisfied += value.required
+            }
+            else{
+                totalSatisfied += value.completed
+            }
+        });
+        return(<>
+            <br/>
+            <h className ="test">({totalSatisfied} / {totalRequired} Courses Completed)</h>
 
+        </>)
+    }
 
     const get_requirements = async (major_name) => {
         MajorDataService.find(major_name)
             .then((response) => {
                 if (Object.keys(response.data).length > 0) {
-                    let category_array = []
-                    const course_count = async (requirements) => {
-                        let total_requirements = 0
+                    setRequirementTable({})
+                    const course_count = (requirements, flag) => {
                         requirements.forEach((item) => {
-                            category_array.push(item.category)
-                            total_requirements += item.required
-                            const category = item.category
+                            let curr_count = 0
+
                             item.courses.forEach((course) => {
                                 if ("course_code" in item.courses[0]) {
                                     if (userCourses.includes(course.course_code)) {
-                                        insert(category)
+                                        curr_count += 1
                                     }
                                 } else {
                                     item.courses.forEach((option) => {
                                         if (userCourses.includes(option.course_code)) {
-                                            insert(category)
+                                            curr_count +=1
                                         }
                                     })
                                 }
                             })
+                            if(parseInt(flag) === 0){
+                                updateRequirementTable(item.category, curr_count, item.required)
+                            }
                         })
-                        return total_requirements
                     }
-                    let num_requirements = 0
-                    num_requirements += course_count(response.data.requirements)
-                    course_count(response.data.prerequisites)
-                    num_requirements += course_count(response.data.electives)
-                    num_requirements+= course_count(response.data.senior)
-                    setTotalRequired(num_requirements)
-                    const progress_count = (requirements) => {
-                        let satisfied = 0
-                        requirements.forEach((item) => {
-                            let completed = retrieve(item.category)
 
-                            if (completed >= item.required){
-                                satisfied += item.required
-                            }
-                            else{
-                                satisfied += completed
-                            }
-                        })
-                        return satisfied
-                    }
-                    let classes_satisfied = 0
-                    classes_satisfied += progress_count(response.data.requirements)
-                    classes_satisfied += progress_count(response.data.electives)
-                    classes_satisfied += progress_count(response.data.senior)
-                    setTotalSatisfied( classes_satisfied)
+                    course_count(response.data.requirements, 0)
+                    course_count(response.data.prerequisites, 1)
+                    course_count(response.data.electives, 0)
+                    course_count(response.data.senior, 0)
                     setMajorData(response.data)
 
                 } else {
@@ -245,7 +248,6 @@ const Home = () => {
                     </div>)
 
                 }
-
             })
     }
 
@@ -255,6 +257,7 @@ const Home = () => {
                 get_requirements(major_name.majorName)
             }}
             ></Searchbar>
+
             {Grid()}
         </>
 
