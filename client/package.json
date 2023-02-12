@@ -9,6 +9,7 @@
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "^5.11.0",
+    "@mui/joy": "^5.0.0-alpha.66",
     "@mui/material": "^5.11.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
