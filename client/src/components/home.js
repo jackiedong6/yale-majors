@@ -230,13 +230,13 @@ const Home = () => {
                                 }
                             })
                             if(parseInt(flag) === 0){
-                                updateRequirementTable(item.category, curr_count, item.required)
+                                updateRequirementTable(item.category, curr_count, parseInt(item.required))
                             }
                         })
                     }
 
                     course_count(response.data.requirements, 0)
-                    course_count(response.data.prerequisites, 1)
+                    course_count(response.data.prerequisites, 0)
                     course_count(response.data.electives, 0)
                     course_count(response.data.senior, 0)
                     setMajorData(response.data)
