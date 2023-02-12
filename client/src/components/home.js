@@ -169,7 +169,11 @@ const Home = () => {
             return (<div className="wrapper" key={index}>
                 <div className="heading">
                     <h1 className="subheading">{item.category}</h1>
-                        <h4 className="required">Completed: {completed} courses / {item.required} required</h4>
+                        {"required_text" in item &&
+                            <h4 className="required">Completed: {completed} courses / {item.required} required <br/> ({item.required_text})</h4>
+                        }
+                        {!("required_text" in item) &&
+                            <h4 className ="required">Completed: {completed} courses / {item.required} required</h4>}
                 </div>
                 <div className="course layout" key={index}>
                     {renderCourses(item.courses, index, item.category)}
