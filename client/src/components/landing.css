@@ -22,28 +22,24 @@
     min-height: calc(50vh - 50px);
     max-width: 1000px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .elements{
     margin-left: 2.5%;
-    width: 47.5%;
     height: 100%;
+    flex: 47.5%;
+    width:100%;
+    min-width:300px;
 }
 
 .logo{
-    margin-right: 2.5%;
-    width: 47.5%;
+    margin-top: 5%;
+    margin-right:2.5%;
     height: 100%;
+    flex: 47.5%;
 }
 
-@media (max-width: 600px) {
-    .logo {
-        display: none;
-    }
-    .elements{
-        width: 80%;
-    }
-}
 
 .feature_text {
     display:inline-block;

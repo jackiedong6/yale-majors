@@ -8,8 +8,7 @@ const Navbar = () => {
     return (
 
         <nav className="navbar_items">
-            <img className="icon" rel="icon" src="touch-icon-228.png" alt=""/>
-            <h1 onClick={() => navigate("/")}>ale Majors</h1>
+            <img className="icon" rel="icon" src="navbarlogo.svg" alt=""/>
             <Authentication></Authentication>
         </nav>
     )

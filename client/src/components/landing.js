@@ -67,26 +67,29 @@ const Landing = () => {
                                 borderRadius: "15px",
                                 transition: "0.3s",
                                 filter: "0.3s",
+                                alignContent:"center",
+                                justifyContent:"center",
+                                textAlign:"center",
                                 "&:hover": {transform: "translateY(-5px)",filter: "brightness(150%)", borderColor: "black"}
                             }}>
-                        Login with Cas
+                        Login with CAS
                     </Button>
-                    <Button variant="outlined"  onClick={() => navigate("/about")}
-                            sx={{
-                                marginTop: "5%;",
-                                marginLeft:"5% !important",
-                                fontFamily: "YaleFont",
-                                fontWeight: "bold",
-                                color: "black",
-                                borderColor: "transparent",
-                                background: "#dddddd !important",
-                                borderRadius: "15px",
-                                transition: "0.3s",
-                                filter: "0.3s",
-                                "&:hover": {transform: "translateY(-5px)",filter: "brightness(95%)", borderColor: "black"}
-                            }}>
-                        About Us
-                    </Button>
+                    {/*<Button variant="outlined"  onClick={() => navigate("/about")}*/}
+                    {/*        sx={{*/}
+                    {/*            marginTop: "5%;",*/}
+                    {/*            marginLeft:"5% !important",*/}
+                    {/*            fontFamily: "YaleFont",*/}
+                    {/*            fontWeight: "bold",*/}
+                    {/*            color: "black",*/}
+                    {/*            borderColor: "transparent",*/}
+                    {/*            background: "#dddddd !important",*/}
+                    {/*            borderRadius: "15px",*/}
+                    {/*            transition: "0.3s",*/}
+                    {/*            filter: "0.3s",*/}
+                    {/*            "&:hover": {transform: "translateY(-5px)",filter: "brightness(95%)", borderColor: "black"}*/}
+                    {/*        }}>*/}
+                    {/*    About Us*/}
+                    {/*</Button>*/}
                 </div>
                 <div className="logo">
                     <img
