@@ -79,7 +79,7 @@
     border-radius: 30px;
     min-width: 300px;
     width: 95%;
-    margin-bottom: 2%;
+    margin-bottom: 0.75rem;
     height: 100%;
 }
 
@@ -132,6 +132,7 @@
     min-height: 75px;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .25);
+    padding-bottom: 2.5%;
 }
 
 .course_title{
@@ -171,7 +172,7 @@
 
 
 .wrapper {
-    margin-bottom: -2.5%;
+    margin-bottom: -6%;
 }
 
 .course.layout {
@@ -224,6 +225,8 @@
     color: #00356b;
     text-align: left;
     padding: 2.5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .heading{
 }
